@@ -16,6 +16,7 @@ public class GetMethodQuiz07 extends HttpServlet {
 		
 		// 노트북에서 주석 추가
 		// 주석 추가
+		// stash 활용
 		
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");

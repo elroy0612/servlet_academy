@@ -29,7 +29,7 @@ public class GetMethodQuiz08 extends HttpServlet {
 		
 //		for (int i = 0; i < list.size(); i++) {
 //			if (list.get(i).contains(search)) {
-//				list.get(i) = list.get(i).replace(search, "<b>" + search + "</b>");
+//				list.set(i, list.get(i).replace(search, "<b>" + search + "</b>"));
 //				out.print("<p>" + list.get(i) + "</p>");
 //			}
 //		}
@@ -38,8 +38,13 @@ public class GetMethodQuiz08 extends HttpServlet {
 		while(iter.hasNext()) {
 			String line = iter.next();
 			if (line.contains(search)) {
-				line = line.replace(search, "<b>" + search + "</b>");
-				out.print("<p>" + line + "</p>");
+				// 풀이 0) indexOf
+				// 풀이 1) split (search를 기준으로)
+//				String[] text = line.split(search);
+//				out.print(text[0] + "<b>" + search + "</b>" + text[1] + "<br>");
+				
+				// 풀이 2) 맛집 -> <b>맛집</b> replace
+				out.print(line.replace(search, "<b>" + search + "</b>") + "<br>");
 			}
 		}
 		out.print("</body></html>");
